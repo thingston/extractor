@@ -20,6 +20,7 @@ use Thingston\Extractor\Page\UriExtractor;
  * @method string|null extractPublisher() Extract article publisher
  * @method array|string|null extractAuthor() Extract article author(s)
  * @method DateTime|null extractDatePublished() Extract article date published
+ * @method DateTime|null extractDateModified() Extract article date modified
  * @method string extractTitle() Extract article title
  * @method string extractSummary() Extract article summary
  * @method string extractImage() Extract article image
@@ -38,6 +39,7 @@ class ArticleExtractor extends AbstractExtractorAggregator
         'publisher' => PublisherExtractor::class,
         'author' => AuthorExtractor::class,
         'published' => DatePublishedExtractor::class,
+        'modified' => DateModifiedExtractor::class,
         'title' => TitleExtractor::class,
         'summary' => SummaryExtractor::class,
         'image' => ImageExtractor::class,
