@@ -29,7 +29,7 @@ class TitleExtractor extends AbstractExtractor
     {
         /* @var $title \DOMElement */
         foreach ($this->dom->filter('title') as $title) {
-            return trim(html_entity_decode($title->textContent, ENT_QUOTES | ENT_HTML5));
+            return $this->decode($title->textContent);
         }
 
         return null;

@@ -36,7 +36,7 @@ class MetaAuthorExtractor extends AbstractExtractor
             }
 
             if (true === $meta->hasAttribute('content')) {
-                $author[] = trim(html_entity_decode($meta->getAttribute('content'), ENT_QUOTES | ENT_HTML5));
+                $author[] = $this->decode($meta->getAttribute('content'));
             }
         }
 

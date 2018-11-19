@@ -12,6 +12,7 @@ namespace Thingston\Extractor;
 
 use DOMElement;
 use Exception;
+use ForceUTF8\Encoding;
 use GuzzleHttp\Psr7\Uri;
 use GuzzleHttp\Psr7\UriResolver;
 use Symfony\Component\DomCrawler\Crawler as DomCrawler;
@@ -77,7 +78,7 @@ abstract class AbstractExtractor
      */
     public static function create(string $html, string $uri = null): AbstractExtractor
     {
-        return new static(new DomCrawler($html, $uri));
+        return new static(new DomCrawler(Encoding::toUTF8($html), $uri));
     }
 
     /**

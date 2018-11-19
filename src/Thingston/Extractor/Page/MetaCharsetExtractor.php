@@ -33,7 +33,7 @@ class MetaCharsetExtractor extends AbstractExtractor
                 continue;
             }
 
-            return trim(html_entity_decode($meta->getAttribute('charset'), ENT_QUOTES | ENT_HTML5));
+            return $this->decode($meta->getAttribute('charset'));
         }
 
         $node = $this->dom->getNode(0);

@@ -34,7 +34,7 @@ class MetaKeywordsExtractor extends AbstractExtractor
             }
 
             if (true === $meta->hasAttribute('content')) {
-                return explode(',', trim(html_entity_decode($meta->getAttribute('content'), ENT_QUOTES | ENT_HTML5)));
+                return explode(',', $this->decode($meta->getAttribute('content')));
             }
 
             return [];

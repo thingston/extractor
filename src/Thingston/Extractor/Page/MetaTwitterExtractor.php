@@ -36,7 +36,7 @@ class MetaTwitterExtractor extends AbstractExtractor
             }
 
             if (true === $meta->hasAttribute('content')) {
-                $content = trim(html_entity_decode($meta->getAttribute('content'), ENT_QUOTES | ENT_HTML5));
+                $content = $this->decode($meta->getAttribute('content'));
                 $name = $meta->getAttribute('name');
 
                 if (false === isset($twitter[$name])) {

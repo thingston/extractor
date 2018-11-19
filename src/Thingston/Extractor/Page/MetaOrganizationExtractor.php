@@ -36,7 +36,7 @@ class MetaOrganizationExtractor extends AbstractExtractor
             }
 
             if (true === $meta->hasAttribute('content')) {
-                $organization[] = trim(html_entity_decode($meta->getAttribute('content'), ENT_QUOTES | ENT_HTML5));
+                $organization[] = $this->decode($meta->getAttribute('content'));
             }
         }
 

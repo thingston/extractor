@@ -37,7 +37,7 @@ class MetaHttpEquivExtractor extends AbstractExtractor
 
             if (true === $meta->hasAttribute('content')) {
                 $name = $meta->getAttribute('http-equiv');
-                $httpEquiv[$name][] = trim(html_entity_decode($meta->getAttribute('content'), ENT_QUOTES | ENT_HTML5));
+                $httpEquiv[$name][] = $this->decode($meta->getAttribute('content'));
             }
 
             return $httpEquiv;

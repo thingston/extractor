@@ -34,7 +34,7 @@ class MetaDescriptionExtractor extends AbstractExtractor
             }
 
             if (true === $meta->hasAttribute('content')) {
-                return trim(html_entity_decode($meta->getAttribute('content'), ENT_QUOTES | ENT_HTML5));
+                return $this->decode($meta->getAttribute('content'));
             }
 
             return '';
