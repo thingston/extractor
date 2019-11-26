@@ -1,0 +1,8 @@
+{
+    "require": {
+        "thingston/extractor": "^0.2.1"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.3"
+    }
+}
